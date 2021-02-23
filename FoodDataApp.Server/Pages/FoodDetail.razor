@@ -1,0 +1,86 @@
+﻿@page "/Detail/{FoodId}"
+@inherits FoodDetailBase
+
+<h1 class="page-title">Details for @Food.Name</h1>
+
+<div class="col-12 row">
+    <div class="col-2">
+        <img src="@($"https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Red_Apple.jpg/1200px-Red_Apple.jpg")" class="img-responsive rounded-circle employee-detail-img" />
+    </div>
+    <div class="col-10 row">
+        <div class="col-xs-12 col-sm-8">
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Food ID</label>
+                <div class="col-sm-8">
+                    <label type="text" class="form-control-plaintext">@Food.FoodId</label>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Food name</label>
+                <div class="col-sm-8">
+                    <label type="text" readonly class="form-control-plaintext">@Food.Name</label>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Calories</label>
+                <div class="col-sm-8">
+                    <label type="text" readonly class="form-control-plaintext">@Food.Calories</label>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Total Fat</label>
+                <div class="col-sm-8">
+                    <label type="text" readonly class="form-control-plaintext">@Food.Fat g</label>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Cholesterol</label>
+                <div class="col-sm-8">
+                    <label type="text" readonly class="form-control-plaintext">@Food.Cholestrol</label>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Sodium</label>
+                <div class="col-sm-8">
+                    <label type="text" readonly class="form-control-plaintext">@Food.Sodium</label>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Potassium</label>
+                <div class="col-sm-8">
+                    <label type="text" readonly class="form-control-plaintext">@Food.Potassium</label>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Total Carbohydrates</label>
+                <div class="col-sm-8">
+                    <label type="text" readonly class="form-control-plaintext">@Food.Carbohydrates</label>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Protein</label>
+                <div class="col-sm-8">
+                    <label type="text" readonly class="form-control-plaintext">@Food.Protein</label>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Vitamin</label>
+                <div class="col-sm-8">
+
+                    <label type="text" readonly class="form-control-plaintext">@Food.Vitamin</label>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

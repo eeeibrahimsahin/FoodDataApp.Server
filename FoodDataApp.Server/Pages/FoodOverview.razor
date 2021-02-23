@@ -1,0 +1,46 @@
+﻿@page "/food"
+@inherits FoodOverviewBase
+
+<h1 class="page-title">Search Food</h1>
+
+
+<form method="get">
+    <div class="form-group">
+        <div class="input-group">
+            <input type="search" class="form-control" @bind-value="@SearchTerm" />
+            <span class="input-group-btn">
+                <input type="button" class="btn btn-default" @onclick="@OnGet" />
+                <i class="fas fa-search"></i>
+
+            </span>
+        </div>
+    </div>
+</form>
+
+@if (SearchTerm != null)
+{
+
+    <div class="card-group">
+        @foreach (var food in Foods)
+        {
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="@($"https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Red_Apple.jpg/1200px-Red_Apple.jpg")" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">@food.Name</h5> 
+                    <a href="./Detail/@food.FoodId" class="btn btn-lg">
+                        <i class="far fa-edit"></i>
+                    </a>
+                    <ul>
+                        <li>
+                            Id: @food.FoodId
+                        </li>
+                        <li>
+                            Calories:@food.Calories kcal
+                        </li>
+                    </ul>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                </div>
+            </div>
+        }
+    </div>
+}
