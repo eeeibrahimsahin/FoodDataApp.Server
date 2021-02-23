@@ -22,6 +22,7 @@ namespace FoodDataApp.Core
         public double Protein { get; set; }
         public int VitaminId { get; set; }
         public Vitamin Vitamin { get; set; }
+        public string Image { get; set; }
 
     }
 }

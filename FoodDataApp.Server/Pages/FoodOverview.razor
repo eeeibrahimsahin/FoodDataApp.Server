@@ -4,43 +4,42 @@
 <h1 class="page-title">Search Food</h1>
 
 
-<form method="get">
+<EditForm Model="@Food">
     <div class="form-group">
         <div class="input-group">
             <input type="search" class="form-control" @bind-value="@SearchTerm" />
             <span class="input-group-btn">
-                <input type="button" class="btn btn-default" @onclick="@OnGet" />
+                <button class="btn btn-outline-info" @onclick="@OnGet">
                 <i class="fas fa-search"></i>
-
+                </button>
             </span>
         </div>
     </div>
-</form>
+</EditForm>
 
-@if (SearchTerm != null)
+@if (Food.Name != null)
 {
 
-    <div class="card-group">
-        @foreach (var food in Foods)
-        {
+    <div class="card-group w-25">
+        
             <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="@($"https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Red_Apple.jpg/1200px-Red_Apple.jpg")" alt="Card image cap">
+                <img class="card-img-top" src="@Food.Image" alt="Card image cap"/>
                 <div class="card-body">
-                    <h5 class="card-title">@food.Name</h5> 
-                    <a href="./Detail/@food.FoodId" class="btn btn-lg">
+                    <h5 class="card-title">@Food.Name</h5> 
+                    <a href="./Detail/@Food.FoodId" class="btn btn-lg">
                         <i class="far fa-edit"></i>
                     </a>
                     <ul>
                         <li>
-                            Id: @food.FoodId
+                            Id: @Food.FoodId
                         </li>
                         <li>
-                            Calories:@food.Calories kcal
+                            Calories:@Food.Calories kcal
                         </li>
                     </ul>
                     <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                 </div>
             </div>
-        }
+        
     </div>
 }
