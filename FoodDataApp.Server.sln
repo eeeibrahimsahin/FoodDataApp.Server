@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodDataApp.Server", "FoodDataApp.Server\FoodDataApp.Server.csproj", "{35E45B8D-8E5C-4B59-925F-E04129A85155}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoodDataApp.Server", "FoodDataApp.Server\FoodDataApp.Server.csproj", "{35E45B8D-8E5C-4B59-925F-E04129A85155}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodDataApp.Core", "FoodDataApp.Core\FoodDataApp.Core.csproj", "{84BEA264-613D-4FB5-8E77-73CE6DC29C5D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoodDataApp.Core", "FoodDataApp.Core\FoodDataApp.Core.csproj", "{84BEA264-613D-4FB5-8E77-73CE6DC29C5D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoodAPI", "FoodAPI\FoodAPI.csproj", "{90AB61D9-8CEF-4269-AB28-911E602A6E88}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodDataApp.Client", "FoodDataApp.Client\FoodDataApp.Client.csproj", "{C9645A33-10E2-4B17-8BDD-7199FAD8FFF2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{84BEA264-613D-4FB5-8E77-73CE6DC29C5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{84BEA264-613D-4FB5-8E77-73CE6DC29C5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{84BEA264-613D-4FB5-8E77-73CE6DC29C5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90AB61D9-8CEF-4269-AB28-911E602A6E88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90AB61D9-8CEF-4269-AB28-911E602A6E88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90AB61D9-8CEF-4269-AB28-911E602A6E88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90AB61D9-8CEF-4269-AB28-911E602A6E88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9645A33-10E2-4B17-8BDD-7199FAD8FFF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9645A33-10E2-4B17-8BDD-7199FAD8FFF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9645A33-10E2-4B17-8BDD-7199FAD8FFF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9645A33-10E2-4B17-8BDD-7199FAD8FFF2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

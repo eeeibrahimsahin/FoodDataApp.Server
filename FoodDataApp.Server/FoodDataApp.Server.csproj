@@ -8,4 +8,8 @@
     <ProjectReference Include="..\FoodDataApp.Core\FoodDataApp.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Pages\CRUD\" />
+  </ItemGroup>
+
 </Project>

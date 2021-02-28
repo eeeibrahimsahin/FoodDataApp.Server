@@ -1,4 +1,5 @@
 ﻿using FoodDataApp.Core;
+using FoodDataApp.Server.Services;
 using Microsoft.AspNetCore.Components;
 using System;
 using System.Collections.Generic;
@@ -9,75 +10,22 @@ namespace FoodDataApp.Server.Pages
 {
     public class FoodDetailBase : ComponentBase
     {
+        [Inject]
+        public IFoodDataService FoodDataService { get; set; }
         public IEnumerable<Food> Foods { get; set; }
-        private List<Vitamin> Vitamins { get; set; }
+        
         public Food Food { get; set; } = new Food();
         [Parameter]
         public string FoodId { get; set; }
-        protected override Task OnInitializedAsync()
+        protected async override Task OnInitializedAsync()
         {
-            InitializeVitamins();
-            InitializeFoods();
-
+            Foods = (await FoodDataService.GetAllFood()).ToList();
             Food = Foods.FirstOrDefault(f => f.FoodId == int.Parse(FoodId));
-            return base.OnInitializedAsync();
+       
         }
-        private void InitializeVitamins()
-        {
-            Vitamins = new List<Vitamin>()
-            {
-                new Vitamin{VitaminId=1, Name="A"},
-                new Vitamin{VitaminId=2, Name="B"},
-                new Vitamin{VitaminId=3, Name="C"},
-                new Vitamin{VitaminId=4, Name="D"},
-            };
-        }
+      
 
-        private void InitializeFoods()
-        {
-            var f1 = new Food
-            {
-                FoodId = 1,
-                Name = "APPEL",
-                Calories = 95,
-                Fat = 0.3,
-                Cholestrol = 0,
-                Sodium = 1.8,
-                Potassium = 195,
-                Carbohydrates = 25,
-                Protein = 0.5,
-                VitaminId = 1,
-            };
-            var f2 = new Food
-            {
-                FoodId = 2,
-                Name = "BANANA",
-                Calories = 95,
-                Fat = 0.3,
-                Cholestrol = 0,
-                Sodium = 1.8,
-                Potassium = 195,
-                Carbohydrates = 25,
-                Protein = 0.5,
-                VitaminId = 1,
-                Image = "https://assets.vogue.com/photos/5deec371e52fbd00086eb68b/16:9/w_2959,h_1664,c_limit/promo-banana.jpg"
-            };
-            var f3 = new Food
-            {
-                FoodId = 3,
-                Name = "PEAR",
-                Calories = 95,
-                Fat = 0.3,
-                Cholestrol = 0,
-                Sodium = 1.8,
-                Potassium = 195,
-                Carbohydrates = 25,
-                Protein = 0.5,
-                VitaminId = 1,
-                Image = "https://5.imimg.com/data5/KA/KH/MY-22541476/stark-crimson-pears-500x500.jpg"
-            };
-            Foods = new List<Food>() { f1, f2, f3 };
-        }
+        
 
     }
 }

@@ -1,0 +1,34 @@
+﻿@page "/crud/edit/{FoodId}?"
+@inherits CRUDPageBase
+
+
+
+    <EditForm>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">FoodId</label>
+            <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Food Id" @bind="@FoodId"/>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlSelect2">Food Name</label>
+            <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="Food Name" @bind="@Name"/>
+
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Description</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" @bind="@Description"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlSelect3">Calories</label>
+            <input type="number" class="form-control" id="exampleFormControlInput3" placeholder="Calories">
+
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlSelect4">Fat</label>
+            <input type="number" class="form-control" id="exampleFormControlInput4" placeholder="Fat">
+        </div>
+    </EditForm>
+
+@if (FoodId==null)
+{
+
+}

@@ -1,17 +1,18 @@
-﻿using System;
-using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Components;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace FoodDataApp.Core
+namespace FoodDataApp.Server.Pages
 {
-    public class Food
+    public class CRUDPageBase : ComponentBase
     {
-        public int FoodId { get; set; }
-        [Required]
-        [StringLength(50, ErrorMessage = "Food name is too long.")]
+        [Parameter]
+        public string FoodId { get; set; }
+        
         public string Name { get; set; }
 
-        [Required]
-        [StringLength(100, ErrorMessage = "Description is too long.")]
         public string Description { get; set; }
         public double Calories { get; set; }
         public double Fat { get; set; }
@@ -22,6 +23,5 @@ namespace FoodDataApp.Core
         public double Protein { get; set; }
         public string Vitamin { get; set; }
         public string Image { get; set; }
-
     }
 }

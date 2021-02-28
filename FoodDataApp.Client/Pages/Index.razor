@@ -1,0 +1,66 @@
+﻿@page "/"
+@inject HttpClient Http
+
+<h1 class="page-title">Search Food</h1>
+
+
+<EditForm Model="@Food">
+    <div class="form-group">
+        <div class="input-group">
+            <input type="search" class="form-control" @bind-value="@SearchTerm" />
+            <span class="input-group-btn">
+                <button class="btn btn-outline-info" @onclick="@GetById">
+                    <i class="fas fa-search"></i>
+                </button>
+            </span>
+        </div>
+    </div>
+</EditForm>
+
+@if (Food.Name != null)
+{
+
+    <div class="card-group w-25">
+
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="@Food.Image" alt="Card image cap" />
+            <div class="card-body">
+                <h5 class="card-title">@Food.Name</h5>
+                <a href="./Detail/@Food.FoodId" class="btn btn-lg">
+                    <i class="far fa-edit"></i>
+                </a>
+                <ul>
+                    <li>
+                        Id: @Food.FoodId
+                    </li>
+                    <li>
+                        Calories:@Food.Calories kcal
+                    </li>
+                </ul>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+        </div>
+
+    </div>
+}
+
+@code{
+    private Food[] Foods { get; set; }
+    string baseUrl = "https://localhost:44396/";
+    private Food Food { get; set; } = new Food();
+    private string SearchTerm { get; set; }
+    protected override async Task OnInitializedAsync()
+    {
+        await Load();
+    }
+    protected async Task Load()
+    {
+        Foods = await Http.GetFromJsonAsync<Food[]>($"{baseUrl}api/foods");
+
+    }
+
+    protected void GetById()
+    {
+        Food = Foods.FirstOrDefault(f => f.Name == SearchTerm.ToUpper());
+    }
+}
